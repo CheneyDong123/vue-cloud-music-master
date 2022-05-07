@@ -10,7 +10,10 @@ requests.interceptors.request.use((config) => {
   return config;
 });
 
-const errorHandle = (status: number, others: MessageParamsTyped | undefined) => {
+const errorHandle = (
+  status: number,
+  others: MessageParamsTyped | undefined
+) => {
   switch (status) {
     case 301:
       break;
@@ -28,7 +31,7 @@ const errorHandle = (status: number, others: MessageParamsTyped | undefined) => 
       break;
 
     default:
-      ElMessage.error(others)
+      ElMessage.error(others);
       break;
   }
 };
@@ -42,7 +45,14 @@ requests.interceptors.response.use(
     return Promise.reject(res);
   },
   (error) => {
-    console.log(error.message);
+    ElMessage(error);
+    const { response } = error;
+    if (response) {
+      errorHandle(response.status, response.data);
+      return Promise.reject(response);
+    }
+    ElMessage("请求失败");
+    return true;
   }
 );
 
