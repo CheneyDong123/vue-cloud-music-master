@@ -1,32 +1,16 @@
 <script setup lang="ts">
-import { ElMessage } from "element-plus";
+import { useStore, useTodos } from "./store";
 
-const open1 = () => {
-  ElMessage("this is a message.");
-};
-const open2 = () => {
-  ElMessage({
-    message: "Congrats, this is a success message.",
-    type: "success",
-  });
-};
-const open3 = () => {
-  ElMessage({
-    message: "Warning, this is a warning message.",
-    type: "warning",
-  });
-};
-const open4 = () => {
-  ElMessage.error("Oops, this is a error message.");
-};
+const store = useStore();
+const todo = useTodos();
+
+const { count } = store;
+const { name } = todo;
+console.log(count);
+console.log(name);
 </script>
 
-<template>
-  <el-button :plain="true" @click="open2">success</el-button>
-  <el-button :plain="true" @click="open3">warning</el-button>
-  <el-button :plain="true" @click="open1">message</el-button>
-  <el-button :plain="true" @click="open4">error</el-button>
-</template>
+<template></template>
 
 <style>
 </style>
