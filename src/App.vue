@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { useStore, useTodos } from "./store";
-
-const store = useStore();
-const todo = useTodos();
-
-const { count } = store;
-const { name } = todo;
-console.log(count);
-console.log(name);
+import BasicLayout from "./layout/BasicLayout.vue";
 </script>
 
-<template></template>
+<template>
+  <div class="root">
+    <BasicLayout />
+  </div>
+</template>
 
-<style>
+<style scoped>
+.root{
+  height: 100vh;
+}
+
 </style>
