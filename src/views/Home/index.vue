@@ -80,6 +80,7 @@ const NAVS = [
     display: block;
     margin: 0 auto;
     text-align: center;
+    width: fit-content;
   }
   span:after {
     content: "";

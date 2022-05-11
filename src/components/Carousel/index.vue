@@ -13,7 +13,7 @@
 .el-carousel__item {
   border-radius: 6px;
   h3 {
-    color: #475669;
+    color: #6b0c28;
     opacity: 0.75;
     line-height: 200px;
     margin: 0;

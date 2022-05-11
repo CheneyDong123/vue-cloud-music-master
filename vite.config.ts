@@ -20,4 +20,7 @@ export default defineConfig({
       "@": resolve(__dirname, "src"), // 路径别名
     },
   },
+  server: {
+    port: 3001, //指定端口号
+  },
 });
