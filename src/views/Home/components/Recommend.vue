@@ -5,11 +5,11 @@ import { ref } from "@vue/reactivity";
 import { _getPlaylist } from "../../../api/playlist";
 let playlists = ref([]);
 async function getPlaylist() {
-  let result = await _getPlaylist()
-  playlists.value = result.data.playlists
+  let result = await _getPlaylist();
+  playlists.value = result.data.result;
 }
 
-getPlaylist()
+getPlaylist();
 </script>
 
 <template>

@@ -1,3 +1,4 @@
 import requests from "./request";
 
-export const _getPlaylist = () => requests.get("/top/playlist/highquality?limit=10");
+// 获取推荐歌单
+export const _getPlaylist = () => requests.get("/personalized?limit=10");

@@ -38,6 +38,10 @@ const routes: Array<RouteRecordRaw> = [
       },
     ],
   },
+  {
+    path: "/playlist",
+    component: () => import("@/components/Common/PlaylistDetail.vue"),
+  },
 ];
 
 const router = createRouter({

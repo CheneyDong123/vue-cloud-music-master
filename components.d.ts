@@ -26,6 +26,7 @@ declare module '@vue/runtime-core' {
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
     ListItem: typeof import('./src/components/Common/ListItem.vue')['default']
+    PlaylistDetail: typeof import('./src/components/Common/PlaylistDetail.vue')['default']
     RecommendItem: typeof import('./src/components/RecommendItem/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
