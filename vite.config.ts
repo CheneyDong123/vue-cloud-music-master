@@ -19,6 +19,7 @@ export default defineConfig({
     alias: {
       "@": resolve(__dirname, "src"), // 路径别名
     },
+    extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
   },
   server: {
     port: 3001, //指定端口号

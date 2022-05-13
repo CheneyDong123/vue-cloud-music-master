@@ -1,24 +1,31 @@
 <script setup lang="ts">
-</script>
+import { onBeforeMount, onMounted, reactive, ref } from "vue";
+import { _getBanner } from "@/api/banner";
+let banners: any = ref([]);
+async function getBanner() {
+  let result = await _getBanner();
+  banners.value = result.data.banners;
+}
 
+getBanner();
+</script>
 <template>
   <el-carousel :interval="4000" type="card" height="200px">
-    <el-carousel-item v-for="item in 6" :key="item">
-      <h3 text="2xl" justify="center">{{ item }}</h3>
-    </el-carousel-item>
+    <template v-if="banners">
+      <el-carousel-item v-for="item in banners" :key="item.encodeId">
+        <img class="cover" :src="item.imageUrl" alt="cover" />
+      </el-carousel-item>
+    </template>
   </el-carousel>
 </template>
 
 <style scoped lang='less'>
+.cover {
+  height: 100%;
+  width: 100%;
+}
 .el-carousel__item {
   border-radius: 6px;
-  h3 {
-    color: #6b0c28;
-    opacity: 0.75;
-    line-height: 200px;
-    margin: 0;
-    text-align: center;
-  }
 }
 
 .el-carousel__item:nth-child(2n) {

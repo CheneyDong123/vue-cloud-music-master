@@ -2,7 +2,7 @@
 import { computed } from "@vue/runtime-core";
 
 const { item } = defineProps(["item"]);
-const { name, coverImgUrl, playCount } = item;
+const { name, coverImgUrl, playCount, creator } = item;
 const formatCount = computed(() => {
   let count = playCount.toString();
 
@@ -18,36 +18,57 @@ const formatCount = computed(() => {
 <template>
   <li class="playlist-item">
     <div class="container">
-      <!-- <div class="count">▷{{ formatCount }}</div> -->
-      <img :src="coverImgUrl" alt="COVERIMG" class="coverimg" />
-      <p>{{ name }}</p>
+      <div class="count">▷ {{ formatCount }}</div>
+      <template v-if="creator">
+        <div class="copywriter">
+          <i class="iconfont icon-yonghu" />
+          {{ creator.nickname }}
+        </div>
+      </template>
+      <img :src="coverImgUrl" alt="COVERIMG" class="coverImg" />
     </div>
+    <p>{{ name }}</p>
   </li>
 </template>
 
 <style scoped lang='less'>
 .playlist-item {
-  display: inline-block;
   margin-bottom: 20px;
-  width: 20%;
+  padding: 5px 10px;
+  width: 18%;
   height: 100%;
   .container {
     width: 100%;
+    height: 100%;
     margin: 0 auto;
-
-    p {
-      font-size: small;
+    position: relative;
+    .count {
+      color: white;
+      font-size: 10px;
+      position: absolute;
+      top: 3px;
+      right: 8px;
     }
-    .coverimg {
-      border-radius: 5px;
+
+    .coverImg {
+      border-radius: 7px;
       width: 100%;
       margin: 0 auto;
     }
-    // .count {
-    //   color: black;
-    //   position: absolute;
-    //   left: 0;
-    // }
+
+    .copywriter {
+      font-size: 8px;
+      color: white;
+      position: absolute;
+      bottom: 10px;
+      left: 8px;
+      .icon-yonghu {
+        font-size: 8px;
+      }
+    }
+  }
+  p {
+    font-size: small;
   }
 }
 </style>

@@ -7,12 +7,10 @@ const goPlaylist = () => {
 </script>
 
 <template>
-  <li>
-    <div class="title" @click="goPlaylist()">{{ title }} ></div>
-    <ul style="margin-top: 15px">
-      <slot></slot>
-    </ul>
-  </li>
+  <div class="title" @click="goPlaylist()">{{ title }} ></div>
+  <ul class="container">
+    <slot></slot>
+  </ul>
 </template>
 
 <style scoped lang='less'>
@@ -20,5 +18,11 @@ const goPlaylist = () => {
   font-size: larger;
   font-weight: bold;
   margin-left: 5px;
+}
+
+.container {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>

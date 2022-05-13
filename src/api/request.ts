@@ -1,19 +1,7 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { ElMessage, MessageParamsTyped } from "element-plus";
 
-const requests = axios.create({
-  baseURL: "/api",
-  timeout: 1000,
-});
-
-requests.interceptors.request.use((config) => {
-  return config;
-});
-
-const errorHandle = (
-  status: number,
-  others: MessageParamsTyped | undefined
-) => {
+const errorHandle = (status: number, others: string) => {
   switch (status) {
     case 301:
       break;
@@ -36,13 +24,20 @@ const errorHandle = (
   }
 };
 
-requests.interceptors.response.use(
-  (res) => {
-    if (res.status && res.status == 200) {
-      return res.data;
-    }
+const requests = axios.create({
+  baseURL: "http://localhost:3000",
+  timeout: 1000,
+});
 
-    return Promise.reject(res);
+requests.interceptors.request.use((config: AxiosRequestConfig) => {
+  return config;
+});
+
+requests.interceptors.response.use(
+  (res: AxiosResponse) => {
+    console.log("22222", res);
+
+    return Promise.resolve(res);
   },
   (error) => {
     ElMessage(error);
