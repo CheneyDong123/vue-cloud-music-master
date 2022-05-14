@@ -3,7 +3,7 @@ import Carousel from "@/components/Carousel/index.vue";
 import RecommendItem from "@/components/RecommendItem/index.vue";
 import { ref } from "@vue/reactivity";
 import { _getPlaylist } from "../../../api/playlist";
-let playlists = ref([]);
+let playlists = ref();
 async function getPlaylist() {
   let result = await _getPlaylist();
   playlists.value = result.data.result;

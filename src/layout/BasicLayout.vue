@@ -13,8 +13,10 @@ import BasicFooter from "@/components/BasicFooter/index.vue";
       <el-aside width="200px">
         <BasicSider />
       </el-aside>
-      <el-main>
+      <el-main >
+        <!-- <el-scrollbar> -->
         <router-view />
+        <!-- </el-scrollbar> -->
       </el-main>
     </el-container>
   </div>

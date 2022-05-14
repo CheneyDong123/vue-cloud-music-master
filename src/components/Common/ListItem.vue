@@ -1,40 +1,19 @@
 <script setup lang="ts">
-import router from "@/router";
 import { computed } from "@vue/runtime-core";
+import { useRouter } from "vue-router";
+import { useTo } from "@/hooks/index";
+
+const router = useRouter();
 
 const { item } = defineProps(["item"]);
-const { name, picUrl, playCount, creator } = item;
+const { name, picUrl, playCount, creator, id } = item;
 const formatCount = computed(() => {
   let count = playCount.toString();
-
-  // if (count.length > 4) {
-  //   count = count.slice(0, count.length - 4);
-  // } else {
-  //   return count;
-  // }
-  // return count + "万";
-  switch (count.length) {
-    case 1:
-    case 2:
-    case 3:
-    case 4:
-      break;
-    case 5:
-    case 6:
-    case 7:
-    case 8:
-      count = count.slice(0, count.length - 4)
-      count += "万";
-      break;
-    default:
-      count = count.slice(0, count.length - 8)
-      count += "亿";
-      break;
-  }
+  count = useTo(count);
   return count;
 });
 const goPlaylistDetail = () => {
-  router.push("/playlist");
+  router.push({ path: "/playlist", query: { id } });
 };
 </script>
 

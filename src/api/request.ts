@@ -35,8 +35,6 @@ requests.interceptors.request.use((config: AxiosRequestConfig) => {
 
 requests.interceptors.response.use(
   (res: AxiosResponse) => {
-    console.log("22222", res);
-
     return Promise.resolve(res);
   },
   (error) => {
