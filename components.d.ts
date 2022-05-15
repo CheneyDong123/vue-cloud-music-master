@@ -9,6 +9,8 @@ declare module '@vue/runtime-core' {
     BasicHeader: typeof import('./src/components/BasicHeader/index.vue')['default']
     BasicSider: typeof import('./src/components/BasicSider/index.vue')['default']
     Carousel: typeof import('./src/components/Carousel/index.vue')['default']
+    Comment: typeof import('./src/components/Comment/index.vue')['default']
+    CommentItem: typeof import('./src/components/Comment/CommentItem.vue')['default']
     Control: typeof import('./src/components/BasicHeader/Control.vue')['default']
     DesciptionDetail: typeof import('./src/components/Common/DesciptionDetail.vue')['default']
     Description: typeof import('./src/components/Common/Description.vue')['default']

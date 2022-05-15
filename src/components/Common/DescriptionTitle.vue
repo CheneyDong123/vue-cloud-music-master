@@ -8,6 +8,7 @@ import {
 } from "@element-plus/icons-vue";
 import { defineProps } from "vue";
 import { useGetTime } from "@/hooks/index";
+import { useTo } from "@/hooks/index";
 
 const { item } = defineProps(["item"]);
 const { name, creator, createTime, subscribedCount, shareCount } = item;
@@ -27,9 +28,9 @@ const { name, creator, createTime, subscribedCount, shareCount } = item;
         <el-button type="danger" :icon="Plus" round></el-button>
       </el-button-group>
       <el-button :icon="CollectionTag" round>
-        收藏({{ subscribedCount }})
+        收藏({{ useTo(subscribedCount) }})
       </el-button>
-      <el-button :icon="Share" round> 分享({{ shareCount }}) </el-button>
+      <el-button :icon="Share" round> 分享({{ useTo(shareCount) }}) </el-button>
       <el-button :icon="Download" round> 下载全部 </el-button>
     </div>
   </div>

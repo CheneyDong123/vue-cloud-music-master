@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2856168 */
-  src: url('//at.alicdn.com/t/font_2856168_xdn8zhmih8.woff2?t=1652505307835') format('woff2'),
-       url('//at.alicdn.com/t/font_2856168_xdn8zhmih8.woff?t=1652505307835') format('woff'),
-       url('//at.alicdn.com/t/font_2856168_xdn8zhmih8.ttf?t=1652505307835') format('truetype');
+  src: url('//at.alicdn.com/t/font_2856168_tbai5m5zlpk.woff2?t=1652590896271') format('woff2'),
+       url('//at.alicdn.com/t/font_2856168_tbai5m5zlpk.woff?t=1652590896271') format('woff'),
+       url('//at.alicdn.com/t/font_2856168_tbai5m5zlpk.ttf?t=1652590896271') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xihuan:before {
+  content: "\e78f";
+  font-size: 18px;
+  color: rgb(179,179,179);
+}
+
+.icon-xiazai1:before {
+  content: "\e638";
+  font-size: 15px;
+  color: rgb(179,179,179);
 }
 
 .icon-iconfontzhizuobiaozhun43:before {
@@ -47,3 +59,4 @@
 .icon-shezhi:before {
   content: "\e64b";
 }
+

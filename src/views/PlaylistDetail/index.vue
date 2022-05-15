@@ -4,6 +4,8 @@ import { ref } from "vue";
 import { LocationQueryValue, useRoute } from "vue-router";
 import LoadingPage from "@/components/Common/LoadingPage.vue";
 import SongList from "@/components/SongList/index.vue";
+import Comment from "@/components/Comment/index.vue";
+import Subscriber from "./components/Subscriber.vue";
 import DescriptionTitle from "@/components/Common/DescriptionTitle.vue";
 import DesciptionDetail from "@/components/Common/DesciptionDetail.vue";
 
@@ -14,8 +16,10 @@ let currentIndex = ref(1);
 async function test(id: LocationQueryValue | LocationQueryValue[]) {
   const result = await _getPlaylistDetail(id);
   playlistDetail.value = result.data.playlist;
-  console.log(playlistDetail.value);
 }
+
+const tabs = [SongList, Comment, Subscriber];
+
 const change = (index: number) => {
   currentIndex.value = index;
 };
@@ -71,7 +75,11 @@ test(id);
             </ul>
           </div>
           <div class="songList">
-            <SongList :songList="playlistDetail.tracks" />
+            <component
+              :is="tabs[currentIndex - 1]"
+              :songList="playlistDetail.tracks"
+              :playlistDetail="playlistDetail"
+            />
           </div>
         </div>
       </div>

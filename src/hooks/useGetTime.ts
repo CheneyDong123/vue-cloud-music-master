@@ -8,7 +8,7 @@ export function useGetTime(time: number) {
       : date.getMonth() + 1) + "-";
   var dates = date.getDate() + " ";
   var hour = date.getHours() + ":";
-  var min = date.getMinutes() + ":";
+  var min = date.getMinutes();
   var second = date.getSeconds();
-  return year + month + dates + hour + min + second;
+  return year + month + dates + hour + min;
 }
