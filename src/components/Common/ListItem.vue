@@ -6,7 +6,7 @@ import { useTo } from "@/hooks/index";
 const router = useRouter();
 
 const { item } = defineProps(["item"]);
-const { name, picUrl, playCount, creator, id } = item;
+const { name, picUrl, playCount, creator, id, coverImgUrl } = item;
 const formatCount = computed(() => {
   let count = playCount.toString();
   count = useTo(count);
@@ -27,7 +27,7 @@ const goPlaylistDetail = () => {
           {{ creator.nickname }}
         </div>
       </template>
-      <img :src="picUrl" alt="COVERIMG" class="coverImg" />
+      <img :src="picUrl || coverImgUrl" alt="COVERIMG" class="coverImg" />
     </div>
     <p>{{ name }}</p>
   </li>

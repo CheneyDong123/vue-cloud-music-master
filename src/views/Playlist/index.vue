@@ -2,7 +2,10 @@
 </script>
 
 <template>
-  <div></div>
+  <div>
+    <div>head</div>
+    <div>content</div>
+  </div>
 </template>
 
 <style scoped lang='less'>

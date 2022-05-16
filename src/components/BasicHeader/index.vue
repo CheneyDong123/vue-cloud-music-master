@@ -27,6 +27,9 @@ import Control from "./Control.vue";
 
 
 <style scoped lang="less">
+.el-row {
+  height: 100%;
+}
 .header-img {
   display: flex;
   align-items: center;
@@ -41,11 +44,13 @@ import Control from "./Control.vue";
   }
 }
 .header-control {
+  height: 100%;
   width: 70px;
   display: flex;
   flex: 1;
   color: #c2bcbc;
   text-align: center;
+  align-items: center;
 }
 .header-search {
   display: flex;
