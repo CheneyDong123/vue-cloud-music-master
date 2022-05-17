@@ -2,18 +2,25 @@
 import { computed } from "@vue/runtime-core";
 import { useRouter } from "vue-router";
 import { useTo } from "@/hooks/index";
+import { defineProps } from "vue";
 
 const router = useRouter();
+const props = defineProps(["item"]);
+const name = computed(() => props.item.name);
+const picUrl = computed(() => props.item.picUrl);
+const playCount = computed(() => props.item.playCount);
+const creator = computed(() => props.item.creator);
+const id = computed(() => props.item.id);
+const coverImgUrl = computed(() => props.item.coverImgUrl);
 
-const { item } = defineProps(["item"]);
-const { name, picUrl, playCount, creator, id, coverImgUrl } = item;
 const formatCount = computed(() => {
-  let count = playCount.toString();
+  let count = playCount.value.toString();
   count = useTo(count);
   return count;
 });
+// const { name, picUrl, playCount, creator, id, coverImgUrl } = toRefs(items.value);
 const goPlaylistDetail = () => {
-  router.push({ path: "/playlist", query: { id } });
+  router.push({ path: "/playlist", query: { id: id.value } });
 };
 </script>
 

@@ -38,6 +38,7 @@ declare module '@vue/runtime-core' {
     LoadingPage: typeof import('./src/components/Common/LoadingPage.vue')['default']
     Loding: typeof import('./src/components/Common/Loding.vue')['default']
     PlaylistDetail: typeof import('./src/components/Common/PlaylistDetail.vue')['default']
+    PlaylistTags: typeof import('./src/components/Common/PlaylistTags.vue')['default']
     RecommendItem: typeof import('./src/components/RecommendItem/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
