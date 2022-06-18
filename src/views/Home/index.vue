@@ -46,11 +46,11 @@ const NAVS = [
 
 <style scoped lang='less'>
 .home-bar {
-  height: 10%;
+  height: 50px;
   width: 100%;
   .home-bar-content {
     position: relative;
-    top: 40%;
+    top: 30%;
     width: fit-content;
     margin: 0 auto;
     a {

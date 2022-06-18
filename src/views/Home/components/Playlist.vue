@@ -7,7 +7,7 @@ import {
 } from "@/api/playlist";
 import { _getPlaylistCatlist } from "@/api/catlist";
 import { formatCategory } from "@/utils/format";
-import { ref, watchEffect, reactive } from "vue";
+import { ref, watchEffect } from "vue";
 import PlaylistTags from "../../../components/Common/PlaylistTags.vue";
 import HighQuality from "@/views/Playlist/HighQuality.vue";
 let catlist = ref();
@@ -62,8 +62,7 @@ watchEffect(async () => {
 <template>
   <div class="playlist-container">
     <div class="playlist-header" v-show="highQuality.length">
-      <div class="playlist-high">123</div>
-      <!-- <HighQuality :highQuality="highQuality" /> -->
+      <HighQuality :highQuality="highQuality" :currentCat="currentCat" />
     </div>
     <div class="playlist-body">
       <div class="tag">
@@ -105,22 +104,17 @@ watchEffect(async () => {
 
 <style scoped lang='less'>
 .playlist-container {
-  margin-top: 20px;
   width: 100%;
   .playlist-header {
     margin: 0 auto;
-    width: 98%;
-    height: 150px;
-    border-radius: 5px;
-    background-color: aquamarine;
-    .playlist-high {
-    }
+    // width: 98%;
+    height: 180px;
   }
   .playlist-body {
     margin-top: 20px;
     width: 100%;
     .tag {
-      width: 98%;
+      // width: 98%;
       display: flex;
       margin: 0 auto;
       padding-bottom: 10px;
@@ -147,6 +141,7 @@ watchEffect(async () => {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
       }
     }
   }

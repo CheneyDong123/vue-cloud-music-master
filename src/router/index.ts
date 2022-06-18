@@ -42,6 +42,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/playlist",
     component: () => import("@/views/PlaylistDetail/index.vue"),
   },
+  {
+    path: "/highplaylist",
+    name: "highplaylist",
+    component: () => import("@/views/Playlist/HighPlaylist.vue"),
+  },
 ];
 
 const router = createRouter({

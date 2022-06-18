@@ -13,9 +13,11 @@ import BasicFooter from "@/components/BasicFooter/index.vue";
       <el-aside width="200px">
         <BasicSider />
       </el-aside>
-      <el-main >
+      <el-main>
+        <div style="width: 100%; height: 100%">
+          <router-view />
+        </div>
         <!-- <el-scrollbar> -->
-        <router-view />
         <!-- </el-scrollbar> -->
       </el-main>
     </el-container>
@@ -51,5 +53,9 @@ import BasicFooter from "@/components/BasicFooter/index.vue";
 
 .el-aside {
   border-right: 1px solid #ebebeb;
+}
+
+.el-main {
+  height: 100%;
 }
 </style>

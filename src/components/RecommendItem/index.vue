@@ -17,12 +17,12 @@ const goPlaylist = () => {
 .title {
   font-size: larger;
   font-weight: bold;
-  margin-left: 5px;
 }
 
 .container {
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 </style>

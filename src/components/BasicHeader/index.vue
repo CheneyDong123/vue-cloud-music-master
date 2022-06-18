@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import Control from "./Control.vue";
+import Search from "./Search.vue";
+import UserLogin from "./UserLogin.vue";
 </script>
 
 <template>
@@ -15,10 +17,14 @@ import Control from "./Control.vue";
       </div>
     </el-col>
     <el-col :span="6">
-      <div class="header-search">search</div>
+      <div class="header-search">
+        <Search />
+      </div>
     </el-col>
     <el-col :span="6" :offset="6">
-      <div class="header-user">user</div>
+      <div class="header-user">
+        <UserLogin />
+      </div>
       <div class="header-setting">theme</div>
       <div class="header-user-message">message</div>
     </el-col>
@@ -55,14 +61,16 @@ import Control from "./Control.vue";
 .header-search {
   display: flex;
   flex: 1;
-  width: 100px;
-  height: 20px;
+  width: 200px;
+  height: 100%;
   float: left;
 }
 .header-user {
   width: 100px;
-  height: 20px;
+  height: 100%;
   float: left;
+  display: flex;
+  align-items: center;
 }
 .header-setting {
   width: 100px;

@@ -16,6 +16,7 @@ declare module '@vue/runtime-core' {
     Description: typeof import('./src/components/Common/Description.vue')['default']
     DescriptionTitle: typeof import('./src/components/Common/DescriptionTitle.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
+    ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElButtonGroup: typeof import('element-plus/es')['ElButtonGroup']
     ElCard: typeof import('element-plus/es')['ElCard']
@@ -26,6 +27,7 @@ declare module '@vue/runtime-core' {
     ElFooter: typeof import('element-plus/es')['ElFooter']
     ElHeader: typeof import('element-plus/es')['ElHeader']
     ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElInput: typeof import('element-plus/es')['ElInput']
     ElMain: typeof import('element-plus/es')['ElMain']
     ElRow: typeof import('element-plus/es')['ElRow']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
@@ -33,6 +35,7 @@ declare module '@vue/runtime-core' {
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
+    HighListItem: typeof import('./src/components/Common/HighListItem.vue')['default']
     ListItem: typeof import('./src/components/Common/ListItem.vue')['default']
     Loading: typeof import('./src/components/Common/Loading.vue')['default']
     LoadingPage: typeof import('./src/components/Common/LoadingPage.vue')['default']
@@ -42,8 +45,10 @@ declare module '@vue/runtime-core' {
     RecommendItem: typeof import('./src/components/RecommendItem/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Search: typeof import('./src/components/BasicHeader/Search.vue')['default']
     Songlist: typeof import('./src/components/Common/Songlist.vue')['default']
     SongList: typeof import('./src/components/SongList/index.vue')['default']
+    UserLogin: typeof import('./src/components/BasicHeader/UserLogin.vue')['default']
   }
 }
 

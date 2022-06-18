@@ -43,7 +43,6 @@ const goPlaylistDetail = () => {
 <style scoped lang='less'>
 .playlist-item {
   margin-bottom: 20px;
-  padding: 5px 10px;
   width: 18%;
   height: 100%;
   .container {
