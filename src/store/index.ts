@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { ref } from 'vue'
 export const useStore = defineStore("main", {
   state: () => {
     return {
@@ -10,10 +11,4 @@ export const useStore = defineStore("main", {
   actions: {},
 });
 
-export const useTodos = defineStore("todos" ,{
-  state: ()=>{
-    return {
-      name: "123"
-    }
-  }
-})
+export * from "./songList";
